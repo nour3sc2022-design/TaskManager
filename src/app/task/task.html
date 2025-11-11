@@ -1,0 +1,12 @@
+<div class="task-item" [class.checked]="checked">
+  <input type="checkbox" [checked]="checked" (change)="checked = !checked" />
+  <h3 [style.color]="isDone ? 'green' : 'red'">{{ taskTitle }}</h3>
+  @if (isDone) {
+    <p>Task completed!</p>
+  }
+  @else {
+    <p>This task is not yet done!</p>
+  }
+  <button (click)="markAsDone()">Change</button>
+  <button (click)="deleteTask()">Delete</button>
+</div>
